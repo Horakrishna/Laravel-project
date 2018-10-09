@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-*/
+
 Route::get('/', function() {
 	//return 'Hello Public page';
 
@@ -29,7 +29,7 @@ Route::get('pallab', function(){
 /*Controller class Some company use this structure 
 Route::get('/','StudentController@index');
 
-*/
+
 Route::get('/', [
 	'uses' =>'StudentController@index',
 	'as'   =>'/'
@@ -39,3 +39,18 @@ Route::get('/about',[
 	'uses' =>'StudentController@add',
 	'as'   =>'/about'
 ]);
+*/
+Route::get('/', [
+
+	'uses' =>'NewshopController@index',
+	'as'   =>'/'
+]);
+
+Route::get('/category-product',[
+	'uses' =>'NewshopController@CategoryProduct',
+	'as'   =>'/category-product'
+]);
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

@@ -1,17 +1,23 @@
+@extends('layouts.app')
 
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">Dashboard</div>
 
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
 
-<!--
-<a href="<?php //echo URL::to('/about');?>">About us</a>
-<a href="<?php //echo route('/about');?>">About us</a> 
-<a href="<?php //echo route('/about');?>">About us</a>
-
--->
-<a href="">Home</a>
-<a href="{{route('/about')}}">About</a>
-<a href="">Home</a>
-<a href="{!! route('/about') !!}">About</a>
-<h2>This is Home page</h2>
-<h3>{{ $name }}</h3>
-<h3>{{ $age }}</h3>
-<h3>{{ $profession }}</h3>
+                    You are logged in!
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
